@@ -42,6 +42,15 @@
       flex-grow: 1;
     }
 
+    /* Сделать шапку и футер уже */
+    .top-bar .container,
+    .bottom-bar .container {
+      max-width: 900px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 0 auto;
+    }
+
     header.top-bar {
       background-color: #252526;
       color: #d4d4d4;
@@ -81,8 +90,9 @@
       padding-top: 40px;
     }
 
+    /* Уменьшенный размер шрифта заголовков */
     h1 {
-      font-size: 2.8em;
+      font-size: 2em;
       margin-bottom: 15px;
       color: #ffffff;
       text-shadow: 0 0 6px #3794ff;
@@ -120,9 +130,10 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
 
+    /* Уменьшенный размер шрифта заголовков в info-box */
     .info-box h2 {
       margin-top: 0;
-      font-size: 1.7em;
+      font-size: 1.3em;
       color: #ffffff;
       margin-bottom: 15px;
       border-bottom: 2px solid #3c3c3c;
@@ -144,20 +155,39 @@
       background-color: #252526;
       color: #a6a6a6;
       text-align: center;
-      padding: 20px 0;
+      padding: 10px 0;
       border-top: 1px solid #3c3c3c;
       margin-top: 60px;
     }
 
+    /* Увеличенные иконки соцсетей и отступы */
     .social-links a {
       color: #a6a6a6;
-      margin: 0 10px;
-      font-size: 1.4em;
+      margin: 0 15px;
+      font-size: 1.8em;
       transition: color 0.2s ease;
     }
 
     .social-links a:hover {
       color: #4fc1ff;
+    }
+
+    /* Контакты в футере */
+    address {
+      font-style: normal;
+      margin-top: 15px;
+      color: #a6a6a6;
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    address a {
+      color: #3794ff;
+    }
+
+    address a:hover {
+      color: #4fc1ff;
+      text-decoration: underline;
     }
 
     /* Адаптивность */
@@ -167,7 +197,7 @@
         padding: 20px 10px;
       }
       h1 {
-        font-size: 2.2em;
+        font-size: 1.7em;
       }
       p.lead {
         font-size: 1.1em;
@@ -178,6 +208,11 @@
       }
       .left-elements {
         margin-bottom: 10px;
+      }
+      /* Соцсети на мобилках чуть меньше */
+      .social-links a {
+        font-size: 1.5em;
+        margin: 0 10px;
       }
     }
   </style>
@@ -201,19 +236,19 @@
     <p class="lead">Программа для эффективного отслеживания и анализа успеваемости с использованием базы данных.</p>
 
     <!-- Информация о программе -->
-<section class="info-box">
-  <h2>Информация о программе</h2>
-  <ul>
-    <li><strong>Название:</strong> StudySync</li>
-    <li><strong>Версия:</strong> 1.0</li>
-    <li><strong>Дата релиза:</strong> 5 апреля 2025</li>
-    <li><strong>Платформа:</strong> Windows</li>
-    <li><strong>Разработчик:</strong> Тимофей Шкут, группа П-32</li>
-    <li><strong>Технологии:</strong> C#, PostgreSQL, Guna UI2 Framework, WinForms</li>
-    <li><strong>Лицензия:</strong> MIT License</li>
-    <li><strong>Репозиторий:</strong> <a href="https://github.com/stquremwork/Study-Sync.git" target="_blank">GitHub</a></li>
-  </ul>
-</section>
+    <section class="info-box">
+      <h2>Информация о программе</h2>
+      <ul>
+        <li><strong>Название:</strong> StudySync</li>
+        <li><strong>Версия:</strong> 1.0</li>
+        <li><strong>Дата релиза:</strong> 5 апреля 2025</li>
+        <li><strong>Платформа:</strong> Windows</li>
+        <li><strong>Разработчик:</strong> Тимофей Шкут, группа П-32</li>
+        <li><strong>Технологии:</strong> C#, PostgreSQL, Guna UI2 Framework, WinForms</li>
+        <li><strong>Лицензия:</strong> MIT License</li>
+        <li><strong>Репозиторий:</strong> <a href="https://github.com/stquremwork/Study-Sync.git" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </section>
 
     <!-- Системные требования -->
     <section class="info-box">
@@ -227,17 +262,19 @@
     </section>
   </main>
 
-  <!-- Футер -->
-  <footer class="bottom-bar">
-    <div class="container">
-      <p>&copy; 2025 StudySync. Все права защищены.</p>
-      <p>Разработал: Шкут Тимофей Витальевич, группа П-32</p>
-      <div class="social-links">
-        <a href="https://github.com/stquremwork" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/%D1%82%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B9-%D1%88%D0%BA%D1%83%D1%82-30765b34b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
+ <footer class="bottom-bar">
+  <div class="container">
+    <p>&copy; 2025 StudySync. Все права защищены.</p>
+    <p>Разработал: Шкут Тимофей Витальевич, группа П-32</p>
+    <div class="social-links">
+      <a href="https://github.com/stquremwork" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/тимофей-шкут-30765b34b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://t.me/pelmen_s_mazikom" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+      <a href="https://mail.google.com/timofeyshkut1985@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
 </body>
 </html>
