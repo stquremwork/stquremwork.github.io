@@ -1,9 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StudySync — Управление успеваемостью</title>
+  <title>StudySync</title>
+
+  <!-- Favicon для вкладки -->
+  <link rel="icon" href="logo.png" type="image/png" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
@@ -12,9 +16,12 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #1e1e1e; 
+      background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
       color: #d4d4d4;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     a {
@@ -32,6 +39,7 @@
       max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
+      flex-grow: 1;
     }
 
     header.top-bar {
@@ -42,6 +50,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
 
     .top-bar .container {
@@ -58,12 +67,14 @@
     .logo {
       height: 40px;
       margin-right: 15px;
+      filter: drop-shadow(0 0 3px #3794ff);
     }
 
     .program-name {
       font-size: 1.5em;
       font-weight: 600;
       color: #ffffff;
+      letter-spacing: 1px;
     }
 
     main {
@@ -71,15 +82,16 @@
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      font-size: 2.8em;
+      margin-bottom: 15px;
       color: #ffffff;
+      text-shadow: 0 0 6px #3794ff;
     }
 
     p.lead {
-      font-size: 1.2em;
+      font-size: 1.3em;
       color: #a6a6a6;
-      max-width: 700px;
+      max-width: 800px;
       margin-bottom: 30px;
     }
 
@@ -90,8 +102,9 @@
       padding: 12px 25px;
       border-radius: 6px;
       font-weight: bold;
-      font-size: 1em;
+      font-size: 1.1em;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     }
 
     .download-button:hover {
@@ -109,8 +122,11 @@
 
     .info-box h2 {
       margin-top: 0;
-      font-size: 1.5em;
+      font-size: 1.7em;
       color: #ffffff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #3c3c3c;
+      padding-bottom: 8px;
     }
 
     .info-box ul {
@@ -119,8 +135,9 @@
     }
 
     .info-box li {
-      padding: 6px 0;
+      padding: 8px 0;
       color: #a6a6a6;
+      font-size: 1.1em;
     }
 
     footer.bottom-bar {
@@ -135,12 +152,33 @@
     .social-links a {
       color: #a6a6a6;
       margin: 0 10px;
-      font-size: 1.2em;
+      font-size: 1.4em;
       transition: color 0.2s ease;
     }
 
     .social-links a:hover {
       color: #4fc1ff;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 20px 10px;
+      }
+      h1 {
+        font-size: 2.2em;
+      }
+      p.lead {
+        font-size: 1.1em;
+      }
+      .top-bar .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .left-elements {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
@@ -150,10 +188,10 @@
   <header class="top-bar">
     <div class="container">
       <div class="left-elements">
-        <img src="assets/images/logo.png" alt="StudySync Logo" class="logo">
+        <img src="logo.png" alt="StudySync Logo" class="logo">
         <span class="program-name">StudySync</span>
       </div>
-      <a href="#" class="download-button">Скачать v1.0</a>
+      <a href="StudySync_v1.0.exe" class="download-button" download>Скачать v1.0</a>
     </div>
   </header>
 
@@ -173,7 +211,7 @@
     <li><strong>Разработчик:</strong> Тимофей Шкут, группа П-32</li>
     <li><strong>Технологии:</strong> C#, PostgreSQL, Guna UI2 Framework, WinForms</li>
     <li><strong>Лицензия:</strong> MIT License</li>
-    <li><strong>Репозиторий:</strong> <a href="https://github.com/stquremwork/Study-Sync.git"  target="_blank">GitHub</a></li>
+    <li><strong>Репозиторий:</strong> <a href="https://github.com/stquremwork/Study-Sync.git" target="_blank">GitHub</a></li>
   </ul>
 </section>
 
@@ -195,8 +233,8 @@
       <p>&copy; 2025 StudySync. Все права защищены.</p>
       <p>Разработал: Шкут Тимофей Витальевич, группа П-32</p>
       <div class="social-links">
-        <a href="https://github.com/stquremwork"  target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/%D1%82%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B9-%D1%88%D0%BA%D1%83%D1%82-30765b34b/"  target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/stquremwork" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/%D1%82%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B9-%D1%88%D0%BA%D1%83%D1%82-30765b34b/" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>
